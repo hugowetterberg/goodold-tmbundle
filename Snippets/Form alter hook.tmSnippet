@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * Implementation of hook_form_alter().
+ *
+ * @param array \$form Nested array of form elements that comprise the form.
+ * @param array \$form_state A keyed array containing the current state of the form.
+ * @param sting \$form_id The name of the form itself. Typically this is the name of the function that generated the form.
+ *
+ * @return void
+ **/
+function $1_form_alter(&amp;\$form, \$form_state, \$form_id) {
+}</string>
+	<key>name</key>
+	<string>Form alter hook</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>form_alter</string>
+	<key>uuid</key>
+	<string>98DC42C7-4740-400D-A118-8EFCE8E68B21</string>
+</dict>
+</plist>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$form['$1'] = array(
+	'#type' =&gt; '$2',
+	'#title' =&gt; t('$3'),
+	'#default_value' =&gt; $4,
+);</string>
+	<key>name</key>
+	<string>Form field</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>$form</string>
+	<key>uuid</key>
+	<string>21A96C00-CB8D-4C40-BA9E-986D72D86648</string>
+</dict>
+</plist>

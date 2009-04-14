@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * Implementation of hook_block().
+ */
+function $1_block(\$op = 'list', \$delta = 0, \$edit = array()) {
+	switch (\$op) {
+		// List our blocks
+		case 'list':
+			\$blocks = array();
+			\$blocks[0] = array(
+				'info' =&gt; t('${2:Block title}'),
+				'cache' =&gt; BLOCK_CACHE_PER_PAGE, // BLOCK_CACHE_GLOBAL | BLOCK_CACHE_PER_ROLE | BLOCK_CACHE_PER_USER BLOCK_NO_CACHE
+			);
+	 return $blocks;
+		break;
+		// Show the configuration form for the block
+		case 'configure':
+			switch (\$delta) {
+				case 0:
+					\$form = array();
+					\$form['${4:conf}'] = array(
+						'#type' =&gt; 'textfield',
+						'#title' =&gt; t('$5'),
+						'#default_value' =&gt; variable_get('$1_block_'. \$delta .'_$4', ''),
+					);
+					return \$form;
+				break;
+			}
+		break;
+		// Save the configuration for the block
+		case 'save':
+			switch (\$delta) {
+				case 0:
+					variable_set('$1_block_'. \$delta .'_$4', \$edit['$4'])
+				break;
+			}
+		break;
+		// View the block
+		case 'view':
+			\$block = array();
+			switch (\$delta) {
+				case 0:
+					\$block['subject'] = t('$2');
+					\$block['content'] = '$3';
+				break;
+			}
+			return \$block;
+		break;
+	}
+}</string>
+	<key>name</key>
+	<string>Block hook</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>block</string>
+	<key>uuid</key>
+	<string>44ED8F71-1078-4642-9FDF-A17A46E96AD7</string>
+</dict>
+</plist>

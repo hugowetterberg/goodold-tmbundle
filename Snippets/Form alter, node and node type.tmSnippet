@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>if (\$form_id == 'node_type_form') {
+	\$type = \$form['#node_type']-&gt;type;
+}
+else if (\$form['#id'] == 'node-form'){
+	\$node = \$form['#node'];
+}</string>
+	<key>name</key>
+	<string>Form alter, node and node type</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>fannt</string>
+	<key>uuid</key>
+	<string>EADA1095-5DCD-4A02-A454-E4FCEA2C476E</string>
+</dict>
+</plist>
