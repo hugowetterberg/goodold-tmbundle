@@ -13,21 +13,19 @@ echo preg_replace(array(
 ), array(
 	'=&gt; array(',
 	'array()',
-), str_replace('array (', 'array(', var_export(unserialize(file_get_contents('php://stdin')), TRUE)));
+), str_replace('array (', 'array(', file_get_contents('php://stdin')));
 </string>
 	<key>fallbackInput</key>
 	<string>none</string>
 	<key>input</key>
 	<string>selection</string>
-	<key>keyEquivalent</key>
-	<string>@u</string>
 	<key>name</key>
-	<string>Unserialize</string>
+	<string>Format Var_Export</string>
 	<key>output</key>
 	<string>replaceSelectedText</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>uuid</key>
-	<string>6B896B45-5B34-45C5-B81E-64E48298FCE2</string>
+	<string>7822682D-222B-47A6-A870-E661240C86DE</string>
 </dict>
 </plist>
