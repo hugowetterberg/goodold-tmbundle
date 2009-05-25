@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>error_log(var_export(func_get_args(), TRUE));</string>
+	<key>name</key>
+	<string>Log function arguments</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>elfa</string>
+	<key>uuid</key>
+	<string>69180C1C-4A1B-4A83-90CF-12F77E0702CF</string>
+</dict>
+</plist>
