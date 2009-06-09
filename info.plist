@@ -2,16 +2,79 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>deleted</key>
+	<array>
+		<string>022DA160-F26D-4686-BE6B-8B69DE844521</string>
+	</array>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>D6572CAC-61F3-4471-BB4F-8FCE51B0CE53</string>
+			<string>9925D27C-9763-4C8C-91BC-E7327547CA08</string>
+			<string>843EF810-07F4-4359-B134-76400D083362</string>
+		</array>
+		<key>submenus</key>
+		<dict>
+			<key>843EF810-07F4-4359-B134-76400D083362</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>F11414C3-F44C-43D6-9C07-ED088D79A885</string>
+				</array>
+				<key>name</key>
+				<string>CSS</string>
+			</dict>
+			<key>9925D27C-9763-4C8C-91BC-E7327547CA08</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>96E7B128-3743-447B-A7A1-43C73EBB2DFE</string>
+					<string>0620180E-3965-450A-9B06-89B6E5815F04</string>
+					<string>E0F617B5-EA21-4483-94E5-EE518D614DB4</string>
+					<string>7A303509-12AD-4DB1-B4CD-25148E916C0E</string>
+					<string>3D75110C-B5C4-4A43-B397-BE8A5E8C8C5D</string>
+					<string>B057961F-69DB-4E78-90BF-E0694DC25DCC</string>
+					<string>39685BDB-F97F-4E94-B05D-A096875FA9D2</string>
+					<string>DA6FA716-C6B8-482D-A335-87148F69145D</string>
+					<string>CED0D6DD-2C97-4D6E-8A81-B5FDC852E2A8</string>
+					<string>69180C1C-4A1B-4A83-90CF-12F77E0702CF</string>
+					<string>6B896B45-5B34-45C5-B81E-64E48298FCE2</string>
+					<string>7822682D-222B-47A6-A870-E661240C86DE</string>
+				</array>
+				<key>name</key>
+				<string>PHP</string>
+			</dict>
+			<key>D6572CAC-61F3-4471-BB4F-8FCE51B0CE53</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>AEFC74C7-6C72-4C0B-82A1-A48A233FEA24</string>
+					<string>44ED8F71-1078-4642-9FDF-A17A46E96AD7</string>
+					<string>98DC42C7-4740-400D-A118-8EFCE8E68B21</string>
+					<string>EADA1095-5DCD-4A02-A454-E4FCEA2C476E</string>
+					<string>21A96C00-CB8D-4C40-BA9E-986D72D86648</string>
+					<string>9F747A98-1F5E-4B8A-8143-FA2F60360A65</string>
+					<string>CF1462F3-59D4-4FDD-BEC2-4984E8B69A6A</string>
+				</array>
+				<key>name</key>
+				<string>Drupal</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>name</key>
 	<string>Good Old</string>
 	<key>ordering</key>
 	<array>
+		<string>9F747A98-1F5E-4B8A-8143-FA2F60360A65</string>
+		<string>CF1462F3-59D4-4FDD-BEC2-4984E8B69A6A</string>
 		<string>44ED8F71-1078-4642-9FDF-A17A46E96AD7</string>
+		<string>96E7B128-3743-447B-A7A1-43C73EBB2DFE</string>
+		<string>0620180E-3965-450A-9B06-89B6E5815F04</string>
 		<string>98DC42C7-4740-400D-A118-8EFCE8E68B21</string>
 		<string>21A96C00-CB8D-4C40-BA9E-986D72D86648</string>
 		<string>AEFC74C7-6C72-4C0B-82A1-A48A233FEA24</string>
 		<string>EADA1095-5DCD-4A02-A454-E4FCEA2C476E</string>
-		<string>022DA160-F26D-4686-BE6B-8B69DE844521</string>
 		<string>B057961F-69DB-4E78-90BF-E0694DC25DCC</string>
 		<string>39685BDB-F97F-4E94-B05D-A096875FA9D2</string>
 		<string>DA6FA716-C6B8-482D-A335-87148F69145D</string>
@@ -22,8 +85,7 @@
 		<string>7822682D-222B-47A6-A870-E661240C86DE</string>
 		<string>69180C1C-4A1B-4A83-90CF-12F77E0702CF</string>
 		<string>CED0D6DD-2C97-4D6E-8A81-B5FDC852E2A8</string>
-		<string>B057961F-69DB-4E78-90BF-E0694DC25DCC</string>
-		<string>39685BDB-F97F-4E94-B05D-A096875FA9D2</string>
+		<string>F11414C3-F44C-43D6-9C07-ED088D79A885</string>
 	</array>
 	<key>uuid</key>
 	<string>289FBF2D-5D03-43BE-84BD-8C2533FB48D4</string>

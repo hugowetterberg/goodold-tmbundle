@@ -7,27 +7,30 @@
 	<key>command</key>
 	<string>#!/usr/bin/env php
 &lt;?php
-echo preg_replace(array(
-	'/=&gt;\s+array\(/im',
-	'/array\(\s+\)/im',
-), array(
-	'=&gt; array(',
-	'array()',
-), str_replace('array (', 'array(', var_export(unserialize(file_get_contents('php://stdin')), TRUE)));
+
+$sel = $_ENV['TM_SELECTED_TEXT'];
+
+preg_match("/([0-9]*)[^0-9]*([0-9]*)/", $sel, $match);
+
+$em = round($match[1] / $match[2], 4);
+
+echo "{$em}em; /* $match[2]px x $em = $match[1]px */";
+
+?&gt;
 </string>
 	<key>fallbackInput</key>
 	<string>none</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>keyEquivalent</key>
-	<string>@u</string>
+	<string>^C</string>
 	<key>name</key>
-	<string>Unserialize</string>
+	<string>Calculate em</string>
 	<key>output</key>
 	<string>replaceSelectedText</string>
 	<key>scope</key>
-	<string>source.php</string>
+	<string>source.css</string>
 	<key>uuid</key>
-	<string>6B896B45-5B34-45C5-B81E-64E48298FCE2</string>
+	<string>F11414C3-F44C-43D6-9C07-ED088D79A885</string>
 </dict>
 </plist>

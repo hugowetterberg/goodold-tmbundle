@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env php
+&lt;?php
+if (isset($_ENV['TM_SELECTED_TEXT'])) {
+  $text = $_ENV['TM_SELECTED_TEXT'];
+  preg_match_all('/[!%@][\w_-]+/', $text, $matches);
+  echo "t(\${1:$text}";
+  if (!empty($matches[0])) {
+    $args = array();
+    $i = 2;
+    foreach ($matches[0] as $arg) {
+      $args[] = '\'' . $arg . '\' =&gt; ${' . $i++ . ':\\$var}';
+    }
+    
+    echo ', array(' . implode(', ', $args) . ')';
+  }
+  echo ')';
+}</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^~t</string>
+	<key>name</key>
+	<string>Wrap in t()</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>9F747A98-1F5E-4B8A-8143-FA2F60360A65</string>
+</dict>
+</plist>
