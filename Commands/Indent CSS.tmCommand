@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/opt/local/bin/php
+&lt;?php
+print preg_replace('/^([a-z\-]{1,}:\s)/m', '  $1', file_get_contents('php://stdin'));</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>^C</string>
+	<key>name</key>
+	<string>Indent CSS</string>
+	<key>output</key>
+	<string>replaceDocument</string>
+	<key>scope</key>
+	<string>source.css</string>
+	<key>uuid</key>
+	<string>D2C9D3F3-C805-4CC0-A9BE-5B312B012C92</string>
+</dict>
+</plist>
