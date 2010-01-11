@@ -11,13 +11,13 @@ import re
 import subprocess
 from sys import stdout, stdin, exit
 
-// Check syntax
+# Check syntax
 code = stdin.read()
 proc = subprocess.Popen(["php", "-d", "display_errors=on", "-l"], stdout=subprocess.PIPE, stderr = subprocess.PIPE)
 output, errors = proc.communicate(code)
 stdout.write(output.replace('in -', ''))
 
-// Check code smell
+# Check code smell
 smelly = {
 'var_dump': re.compile('var_dump\('),
 'error_log': re.compile('error_log\('),
