@@ -13,9 +13,11 @@ from sys import stdout, stdin, exit
 
 # Check syntax
 code = stdin.read()
-proc = subprocess.Popen(["php", "-d", "display_errors=on", "-l"], stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+proc = subprocess.Popen(["php", "-d", "display_errors=on", "-l"],
+	stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
 output, errors = proc.communicate(code)
-stdout.write(output.replace('in -', ''))
+stdout.write(output.replace('in -', 'in file').replace('parsing -', 'parsing file'))
+stdout.write("\n")
 
 # Check code smell
 smelly = {
@@ -28,7 +30,7 @@ for line in code.split("\n"):
 	for smell in smelly:
 		ex = smelly[smell]
 		if ex.search(line):
-			stdout.write("%s smells bad at line %i" % (smell, l))
+			stdout.write("%s smells bad at line %i\n" % (smell, l))
 	l=l+1
 
 </string>
