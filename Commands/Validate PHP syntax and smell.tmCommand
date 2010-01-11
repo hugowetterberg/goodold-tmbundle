@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env python
+import os
+import re
+import subprocess
+from sys import stdout, stdin, exit
+
+// Check syntax
+code = stdin.read()
+proc = subprocess.Popen(["php", "-d", "display_errors=on", "-l"], stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+output, errors = proc.communicate(code)
+stdout.write(output.replace('in -', ''))
+
+// Check code smell
+smelly = {
+'var_dump': re.compile('var_dump\('),
+'error_log': re.compile('error_log\('),
+}
+
+l = 1
+for line in code.split("\n"):
+	for smell in smelly:
+		ex = smelly[smell]
+		if ex.search(line):
+			stdout.write("%s smells bad at line %i" % (smell, l))
+	l=l+1
+
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>Validate PHP syntax and smell</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>C6452B38-0224-4658-970E-6D83E58A2A9E</string>
+</dict>
+</plist>
