@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * An alternative to array_merge_recursive
+ *
+ * @return array
+ */
+function $1_merge_recursive() {
+  \$args = func_get_args();
+  \$a = array_shift(\$args);
+
+  foreach (\$args as \$b) {
+    foreach (\$b as \$key =&gt; \$val) {
+      if (is_array(\$val) &amp;&amp; is_array(\$a[\$key])) {
+        \$b[\$key] = custom_merge_recursive(\$a[\$key], \$val);
+      }
+    }
+    \$a = array_merge(\$a, \$b);
+  }
+
+  return \$a;
+}</string>
+	<key>name</key>
+	<string>Custom merge recursive</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>merge</string>
+	<key>uuid</key>
+	<string>AC871723-C3F5-4E0A-B62F-8BE0FE8DCFF7</string>
+</dict>
+</plist>
