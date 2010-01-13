@@ -26,12 +26,13 @@ smelly = {
 'var_dump': re.compile('var_dump\('),
 'error_log': re.compile('error_log\('),
 }
+ignore = re.compile('\/\/\slegitimate');
 
 l = 1
 for line in code.split("\n"):
 	for smell in smelly:
 		ex = smelly[smell]
-		if ex.search(line):
+		if ex.search(line) and not ignore.search(line):
 			stdout.write("%s smells bad at line %i\n" % (smell, l))
 	l=l+1
 
