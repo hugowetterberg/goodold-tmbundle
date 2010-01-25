@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env php
 &lt;?php
-print eval($_ENV['TM_SELECTED_TEXT']);</string>
+eval('print ' . $_ENV['TM_SELECTED_TEXT'] . ';');</string>
 	<key>fallbackInput</key>
 	<string>none</string>
 	<key>input</key>
