@@ -8,6 +8,8 @@
 	<string>t()</string>
 	<key>scope</key>
 	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>t</string>
 	<key>uuid</key>
 	<string>CF1462F3-59D4-4FDD-BEC2-4984E8B69A6A</string>
 </dict>
