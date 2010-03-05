@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>$menu['${1:path/in/menu/system}'] = array(
+  'title' =&gt; '${2:Title}',
+  'page callback' =&gt; '${3:page_callback_function}',
+  'page arguments' =&gt; array($4),
+  'access arguments' =&gt; array('access content'),
+  'type' =&gt; ${6:MENU_NORMAL_ITEM|MENU_CALLBACK|MENU_LOCAL_TASK|MENU_DEFAULT_LOCAL_TASK|MENU_SUGGESTED_ITEM}
+  'file' =&gt; '${5:$TM_FILENAME}',
+);</string>
+	<key>name</key>
+	<string>Menuitem</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>$menu</string>
+	<key>uuid</key>
+	<string>67209C1F-8F61-4E69-A5DF-125C48208C17</string>
+</dict>
+</plist>

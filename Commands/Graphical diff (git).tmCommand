@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env python -S
+import os
+import sys
+import tempfile
+import subprocess
+import time
+
+file = os.path.basename(os.environ['TM_FILEPATH'])
+proc = subprocess.Popen(['/opt/local/bin/git', 'ls-tree', 'HEAD'],
+    stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+output, errors = proc.communicate()
+
+for line in output.split("\n"):
+    if len(line) &gt; 0:
+        props, name = line.split('\t')	
+        props = props.split(' ')
+        if name == file:
+            blob = props[2]
+
+if blob:
+    proc = subprocess.Popen(['/opt/local/bin/git', 'show', blob],
+        stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+    output, errors = proc.communicate()
+    original = tempfile.NamedTemporaryFile('w')
+    original.write(output)
+    original.flush()
+
+    subprocess.Popen(['opendiff', original.name, file], close_fds=True)
+    time.sleep(2)</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^D</string>
+	<key>name</key>
+	<string>Graphical diff (git)</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>uuid</key>
+	<string>FF08AE39-178B-4A6D-8641-BDCF653A48D0</string>
+</dict>
+</plist>
