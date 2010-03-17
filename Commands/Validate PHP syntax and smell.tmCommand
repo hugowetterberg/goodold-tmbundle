@@ -25,6 +25,8 @@ if output.find("No syntax errors") == -1:
 smelly = {
 'var_dump': re.compile('var_dump\('),
 'error_log': re.compile('error_log\('),
+'xdebug_print_function_stack': re.compile('xdebug_print_function_stack\('),
+'die': re.compile('die'),
 }
 ignore = re.compile('\/\/\slegitimate');
 
