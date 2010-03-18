@@ -17,19 +17,40 @@ function goFormatVarExport($string) {
 	), str_replace('array (', 'array(', $string));
 }
 
-echo goFormatVarExport(file_get_contents('php://stdin'));
-</string>
-	<key>fallbackInput</key>
-	<string>none</string>
+$lines = explode("\n", file_get_contents('test.txt'));
+$nresult = array();
+foreach ($lines as &amp;$line) {
+	$tmp = explode("\t", $line);
+	if (is_string($tmp[0])) {
+		$key = array_shift($tmp);
+	}
+	else {
+		$key = FALSE;
+	}
+	if (count($tmp) == 1) {
+		$nvalue = $tmp[0];
+	}
+	foreach ($tmp as $tmpvalue) {
+		$nvalue = unserialize($tmpvalue);
+		if ($nvalue === FALSE) {
+			$nvalue = $tmpvalue;
+		}
+	}
+	if ($key) {
+		$nresult[$key] = $nvalue;
+	}
+	else {
+		$nresult[] = $nvalue;
+	}
+}
+echo goFormatVarExport(var_export($nresult, TRUE));</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>name</key>
-	<string>Format Var_Export</string>
+	<string>Format SequelPro Copy</string>
 	<key>output</key>
 	<string>replaceSelectedText</string>
-	<key>scope</key>
-	<string>source.php</string>
 	<key>uuid</key>
-	<string>7822682D-222B-47A6-A870-E661240C86DE</string>
+	<string>DCAF9ECF-6FA0-43A5-9EBA-DE15E8DE8B31</string>
 </dict>
 </plist>
