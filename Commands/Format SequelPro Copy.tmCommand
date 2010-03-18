@@ -17,7 +17,7 @@ function goFormatVarExport($string) {
 	), str_replace('array (', 'array(', $string));
 }
 
-$lines = explode("\n", file_get_contents('test.txt'));
+$lines = explode("\n", file_get_contents('php://stdin'));
 $nresult = array();
 foreach ($lines as &amp;$line) {
 	$tmp = explode("\t", $line);
