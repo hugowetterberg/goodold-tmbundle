@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env php
+&lt;?php
+function goFormatVarExport($string) {
+	return preg_replace(array(
+		'/=&gt;\s+array\(/im',
+		'/array\(\s+\)/im',
+	), array(
+		'=&gt; array(',
+		'array()',
+	), str_replace('array (', 'array(', $string));
+}
+
+eval('$input = ' . trim(file_get_contents('php://stdin')) . ';');
+
+echo serialize($input);
+</string>
+	<key>fallbackInput</key>
+	<string>none</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>Serialize</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>uuid</key>
+	<string>F2E6DE2D-FA7A-4D78-A6E3-B28E0E71FAA3</string>
+</dict>
+</plist>
